@@ -60,7 +60,7 @@ theorem integral_norm_charFun_independent_product_le_exp {n : ℕ} {Ω : Fin n �
   rw [integral_norm_charFun_independent_product]
   calc
     _ ≤ ∏ i, Real.exp (-b i) := by
-      apply Finset.prod_le_prod
+      apply Finset.prod_le_prod₀
       · intro i hi
         exact integral_nonneg (fun ω ↦ norm_nonneg _)
       · intro i hi

@@ -26,7 +26,7 @@ theorem norm_geometric_cosine_product_le {θ A : ℝ} (hθ0 : 0 ≤ θ) (hθ1 : 
   rw [Complex.ofReal_prod, norm_prod]
   calc
     _ ≤ ∏ j : Fin n, Real.exp (-((A * θ ^ (j : ℕ)) ^ 2) / 2) := by
-      apply Finset.prod_le_prod
+      apply Finset.prod_le_prod₀
       · intro j hj
         exact norm_nonneg _
       · intro j hj

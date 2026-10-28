@@ -33,7 +33,7 @@ lemma residue_streams_law {k : ℕ} (hk : 0 < k) :
 lemma independent_residue_streams {k : ℕ} (hk : 0 < k) :
     iIndepFun (fun (j : Fin k) w n ↦ w (residueIndex k j n)) digitSpace := by
   apply (iIndepFun_iff_map_fun_eq_pi_map (fun j ↦
-    (measurable_pi_lambda _ (fun n ↦ measurable_pi_apply (residueIndex k j n))).aemeasurable)).mpr
+    (Measurable.of_eval (fun n ↦ measurable_pi_apply (residueIndex k j n))).aemeasurable)).mpr
   rw [residue_streams_law hk]
   congr 1
   funext j

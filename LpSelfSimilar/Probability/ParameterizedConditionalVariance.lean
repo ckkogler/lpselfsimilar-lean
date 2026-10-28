@@ -3,6 +3,7 @@ module
 public import LpSelfSimilar.Probability.ConditionalVarianceLaw
 public import LpSelfSimilar.Probability.DiscreteConditionalLaw
 public import LpSelfSimilar.Probability.ConditionalMoments
+public import Mathlib.MeasureTheory.Integral.Prod
 
 @[expose] public section
 

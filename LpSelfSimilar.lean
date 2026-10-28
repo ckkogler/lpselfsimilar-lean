@@ -57,12 +57,25 @@ public import LpSelfSimilar.Entropy.EntropyVariance
 
 public import LpSelfSimilar.Algebraic.ContinuousDensityEndpoint
 
+public import LpSelfSimilar.WeakReverseHolder.SharpTheorem
+public import LpSelfSimilar.WeakReverseHolder.SharpSourceRecurrence
+
+public import LpSelfSimilar.Revised.ScaledYoung
+
+public import LpSelfSimilar.Revised.DetailComparison
+
+public import LpSelfSimilar.Revised.BoundedApproximation
+public import LpSelfSimilar.Revised.PowerSelection
+
 @[expose] public section
 
 /-!
-Public library root. Exposes Lemma 2.1 (`LpSelfSimilar.weak_reverse_holder`)
-Theorem 1.1 (`LpSelfSimilar.self_similar_higher_integrability`), and Corollary 1.3
-(`LpSelfSimilar.bernoulli_convolution_continuous_density`), together with
-the reusable Gaussian, entropy, probability and rational arithmetic machinery
-used in the rational proof of Corollary 1.3.
+Public root for Kittle–Kogler's self-similar higher-integrability theorem,
+the non-strict exponent-100 continuity criterion, and their supporting analysis.
+The revised weak reverse Hölder criterion is `weak_reverse_holder_eighteen`;
+the older criterion and rational exponent-50 API remain available.
+
+The library includes the probability laws, Gaussian detail, entropy, algebraic
+arithmetic and convolution arguments used by the papers. The cubic extension is
+exposed by `BernoulliCubic`; `Solution` imports both roots.
 -/

@@ -36,7 +36,9 @@ theorem binaryGaussianLaw_eq_half_add (u : ℝ) :
 theorem binaryGaussianLaw_map_neg (u : ℝ) :
     (binaryGaussianLaw u).map (fun x : ℝ => -x) = binaryGaussianLaw u := by
   rw [binaryGaussianLaw_eq_half_add, Measure.map_add _ _ measurable_neg]
-  simp only [Measure.map_smul, gaussianReal_map_neg, neg_neg]
+  rw [Measure.map_smul _ measurable_neg.aemeasurable,
+    Measure.map_smul _ measurable_neg.aemeasurable]
+  simp only [gaussianReal_map_neg, neg_neg]
   rw [add_comm]
 
 theorem binaryGaussianLaw_singleton_zero (u : ℝ) : binaryGaussianLaw u {0} = 0 := by

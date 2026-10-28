@@ -357,7 +357,7 @@ public import LpSelfSimilar.Algebraic.DegreeMahlerPowers
 /-!
 # Cubic continuity for algebraic Bernoulli convolutions
 
-This root exposes the verified cubic development and its shared analysis,
+This root exposes Kittle–Kogler's cubic development and its shared analysis,
 probability, algebraic and self-similar-measure library.
 
 The main results are `LpSelfSimilar.algebraic_bernoulli_convolution_cubic`,
@@ -379,7 +379,7 @@ approximation and sharp concentration stopping establish that criterion.
 The `Cubic*` analysis and algebraic modules supply every quantitative input.
 The existing even/odd convolution argument supplies continuity and support.
 
-Detailed source correspondence and remaining supporting-formulation and
-publication-verification obligations are recorded in the development docs.
-The first-paper public statements and proofs remain unchanged.
+The public coverage and formalization documents describe the source
+correspondence. The preserved first-paper APIs remain available alongside the
+revised statements.
 -/

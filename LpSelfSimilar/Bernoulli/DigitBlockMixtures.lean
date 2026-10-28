@@ -58,7 +58,8 @@ theorem blockPMF_eq_band_shifted_mixture (θ : ℝ) (m n : ℕ) (j : ℝ) :
   classical
   rw [blockPMF, ← PMF.toMeasure_map (fun x : ℝ ↦ θ ^ m * x) (digitPMF θ n) (by fun_prop),
     digitPMF_eq_band_mixture θ n j, Measure.map_finset_sum' (by fun_prop)]
-  simp only [Measure.map_smul, digitBandShiftedLaw, zpow_natCast]
+  have hscale : Measurable (fun x : ℝ ↦ θ ^ m * x) := by fun_prop
+  simp only [Measure.map_smul _ hscale.aemeasurable, digitBandShiftedLaw, zpow_natCast]
 
 /-- The existing block law uses the same PMF mixture operation as the proved independence machinery. -/
 theorem blockPMF_eq_band_pmfMixture (θ : ℝ) (m n : ℕ) (j : ℝ) :

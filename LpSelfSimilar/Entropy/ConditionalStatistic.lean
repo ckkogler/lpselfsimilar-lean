@@ -41,7 +41,7 @@ lemma averageConditionalEntropy_joint_eq {α β γ : Type*} (p : PMF α)
   let q := p.map (fun a ↦ (f a, g a))
   have hfst : q.map Prod.fst = p.map f := by simp [q, PMF.map_comp, Function.comp_def]
   let e : (q.map Prod.fst).support ≃ (p.map f).support :=
-    Equiv.setCongr (congrArg PMF.support hfst)
+    Set.equivOfEq (congrArg PMF.support hfst)
   unfold averageConditionalEntropy
   classical
   letI : Fintype (p.map f).support :=

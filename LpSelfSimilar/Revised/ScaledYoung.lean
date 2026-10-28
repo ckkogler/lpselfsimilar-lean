@@ -65,22 +65,22 @@ lemma exists_compact_carrier_finiteConvolution {n : ℕ} (μ : Fin n → Measure
 /-- Lemma 3.2: arbitrary positive scaled copies of a compactly supported
 probability law with density in `L^p`, `p ≥ k/(k-1)`, convolve to a continuous
 compactly supported density. A compact carrier states compact support without
-making any regularity assumption on the original density representative. -/
-theorem scaled_finite_convolution_continuous_density {k : ℕ} (hk : 2 ≤ k)
+making any regularity assumption on the original density representative.
+The exponent may be infinite. -/
+theorem scaled_finite_convolution_continuous_density_ennreal {k : ℕ} (hk : 2 ≤ k)
     (ν : Measure ℝ) [IsProbabilityMeasure ν]
     (hcompact : ∃ K : Set ℝ, IsCompact K ∧ ν Kᶜ = 0)
-    {p : ℝ} (hp : (k : ℝ) / ((k : ℝ) - 1) ≤ p)
+    {p : ℝ≥0∞} (hp : ENNReal.ofReal ((k : ℝ) / ((k : ℝ) - 1)) ≤ p)
     {f : ℝ → ℝ} (hf : Integrable f volume) (hf0 : ∀ x, 0 ≤ f x)
     (hν : ν = volume.withDensity (fun x ↦ ENNReal.ofReal (f x)))
-    (hfp : MemLp f (ENNReal.ofReal p) volume)
+    (hfp : MemLp f p volume)
     (a : Fin k → ℝ) (ha : ∀ i, 0 < a i) :
     ∃ g : ℝ → ℝ, (∀ x, 0 ≤ g x) ∧ Continuous g ∧ HasCompactSupport g ∧
       finiteConvolution (fun i ↦ ν.map (fun x ↦ a i * x)) =
         volume.withDensity (fun x ↦ ENNReal.ofReal (g x)) := by
   obtain ⟨K, hK, hνK⟩ := hcompact
   obtain ⟨F, hF0, hF, hνF, hFp, _⟩ := exists_supported_density_memLp hf hf0 hν
-    hK.measurableSet hνK hK.measure_lt_top.ne hfp
-    (ENNReal.ofReal_le_ofReal hp)
+    hK.measurableSet hνK hK.measure_lt_top.ne hfp hp
   let μ : Fin k → Measure ℝ := fun i ↦ ν.map (fun x ↦ a i * x)
   have hfamily (i : Fin k) := exists_density_map_mul_pos (ha i) hF hF0 hνF hFp
   obtain ⟨g, hg0, hgc, hgi, hμg⟩ := exists_continuous_density_finiteConvolution hk μ
@@ -96,5 +96,20 @@ theorem scaled_finite_convolution_continuous_density {k : ℕ} (hk : 2 ≤ k)
   obtain ⟨_, S, hS, hμS⟩ := exists_compact_carrier_finiteConvolution μ
     (fun i ↦ by dsimp [μ]; infer_instance) hμcompact
   exact ⟨g, hg0, hgc, hasCompactSupport_of_density hgi hg0 hgc hμg hS hμS, hμg⟩
+
+/-- The finite real-exponent formulation of Lemma 3.2. -/
+theorem scaled_finite_convolution_continuous_density {k : ℕ} (hk : 2 ≤ k)
+    (ν : Measure ℝ) [IsProbabilityMeasure ν]
+    (hcompact : ∃ K : Set ℝ, IsCompact K ∧ ν Kᶜ = 0)
+    {p : ℝ} (hp : (k : ℝ) / ((k : ℝ) - 1) ≤ p)
+    {f : ℝ → ℝ} (hf : Integrable f volume) (hf0 : ∀ x, 0 ≤ f x)
+    (hν : ν = volume.withDensity (fun x ↦ ENNReal.ofReal (f x)))
+    (hfp : MemLp f (ENNReal.ofReal p) volume)
+    (a : Fin k → ℝ) (ha : ∀ i, 0 < a i) :
+    ∃ g : ℝ → ℝ, (∀ x, 0 ≤ g x) ∧ Continuous g ∧ HasCompactSupport g ∧
+      finiteConvolution (fun i ↦ ν.map (fun x ↦ a i * x)) =
+        volume.withDensity (fun x ↦ ENNReal.ofReal (g x)) :=
+  scaled_finite_convolution_continuous_density_ennreal hk ν hcompact
+    (ENNReal.ofReal_le_ofReal hp) hf hf0 hν hfp a ha
 
 end LpSelfSimilar.Revised

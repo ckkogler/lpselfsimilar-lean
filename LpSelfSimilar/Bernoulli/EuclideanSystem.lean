@@ -59,7 +59,7 @@ theorem euclideanLaw_stationary {l : ℝ} (hl : 0 < l) (hl1 : l < 1) :
   simp_rw [hc]
   conv_lhs => rw [convolution_stationary_sum habs]
   rw [Measure.map_finset_sum (by fun_prop)]
-  simp_rw [Measure.map_smul]
+  simp_rw [Measure.map_smul _ realLine.symm.continuous.measurable.aemeasurable]
   apply Finset.sum_congr rfl
   intro e _
   congr 1

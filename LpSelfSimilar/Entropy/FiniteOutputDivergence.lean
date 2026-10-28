@@ -81,7 +81,7 @@ theorem toReal_klDiv_bool_uniform (μ ν : Measure Bool)
   simp only [Fintype.sum_bool, hν, ENNReal.toReal_div, ENNReal.toReal_one,
     ENNReal.toReal_ofNat, mul_log_div_half]
   rw [show (μ {true}).toReal = 1 - (μ {false}).toReal by linarith]
-  simp only [binEntropy, log_inv]
+  rw [binEntropy_eq_negMulLog_add_negMulLog_one_sub, negMulLog_def]
   ring
 
 end LpSelfSimilar.Entropy

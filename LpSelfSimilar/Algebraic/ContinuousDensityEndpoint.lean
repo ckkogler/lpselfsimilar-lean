@@ -8,7 +8,7 @@ public import LpSelfSimilar.Algebraic.ContinuousDensity
 # The non-strict exponent-100 criterion
 
 Theorem 1.2 of Kittle–Kogler includes equality in the quantitative hypothesis.
-The existing proof gives continuity under the stronger gap criterion
+The existing proof gives continuity under the gap condition
 `(1 - l) * complexity l ^ 100 < 2`, so the endpoint follows from a bound by one.
 -/
 

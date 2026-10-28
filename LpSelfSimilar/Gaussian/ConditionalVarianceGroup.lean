@@ -129,7 +129,7 @@ theorem higherDetail_conditioned_groups {k : ℕ} {Ω : Fin (k + 1) → Type*}
   apply (higherDetail_finiteConvolution_le _ hr).trans
   calc
     _ ≤ ∏ _j : Fin (k + 1), (1 / 100 : ℝ) := by
-      apply Finset.prod_le_prod
+      apply Finset.prod_le_prod₀
       · intro j _
         exact detail_nonneg _ _
       · intro j _

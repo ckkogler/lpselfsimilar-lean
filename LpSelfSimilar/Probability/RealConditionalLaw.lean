@@ -42,7 +42,8 @@ lemma compProd_trim_realConditionalLaw {Ω : Type*} {m : MeasurableSpace Ω}
     P.trim hm ⊗ₘ realConditionalLaw m X P =
       @Measure.map Ω (Ω × ℝ) mΩ (m.prod inferInstance) (fun ω ↦ (ω, X ω)) P := by
   rw [realConditionalLaw, trim_eq_map hm]
-  exact compProd_map_condDistrib hX
+  exact compProd_map_condDistrib (mβ := m)
+    (@Measurable.aemeasurable Ω Ω mΩ m id P (measurable_id'' hm)) hX
 
 /-- Conditional expectations of functions of X are integrals of the conditional law. -/
 lemma condExp_eq_integral_realConditionalLaw {Ω : Type*} {m : MeasurableSpace Ω}

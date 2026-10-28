@@ -15,7 +15,9 @@ open MeasureTheory MeasureTheory.Measure
 
 namespace LpSelfSimilar
 
-@[instance_reducible] private noncomputable def probabilityConvolutionMonoid : CommMonoid (ProbabilityMeasure ℝ) where
+/-- Convolution gives bundled probability laws a commutative monoid structure.
+The instance is installed locally for the finite convolution construction. -/
+@[instance_reducible] noncomputable def probabilityConvolutionMonoid : CommMonoid (ProbabilityMeasure ℝ) where
   mul μ ν := ⟨(μ : Measure ℝ) ∗ (ν : Measure ℝ), inferInstance⟩
   one := ⟨dirac 0, inferInstance⟩
   mul_assoc μ ν ρ := Subtype.ext (conv_assoc _ _ _)
@@ -25,7 +27,8 @@ namespace LpSelfSimilar
 
 attribute [local instance] probabilityConvolutionMonoid
 
-private def asProbability (μ : Measure ℝ) [IsProbabilityMeasure μ] : ProbabilityMeasure ℝ :=
+/-- Bundle a probability law for the finite convolution construction. -/
+def asProbability (μ : Measure ℝ) [IsProbabilityMeasure μ] : ProbabilityMeasure ℝ :=
   ⟨μ, inferInstance⟩
 
 noncomputable def finsetConvolution {I : Type*} (s : Finset I) (μ : I → Measure ℝ)

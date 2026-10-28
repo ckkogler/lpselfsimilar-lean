@@ -29,7 +29,7 @@ theorem charFun_scaled_convolution_prefix_tail {θ : ℝ} (hθ : |θ| < 1)
     charFun ((convolution θ).map (fun x => a * x)) u =
       (∏ j : Fin n, (Real.cos ((a * θ ^ (j : ℕ)) * u) : ℂ)) *
         charFun ((convolution θ).map (fun x => (a * θ ^ n) * x)) u := by
-  haveI : IsProbabilityMeasure ((convolution θ).map (fun x => θ ^ n * x)) :=
+  have : IsProbabilityMeasure ((convolution θ).map (fun x => θ ^ n * x)) :=
     LpSelfSimilar.Probability.isProbabilityMeasure_map (by fun_prop)
   rw [charFun_map_mul]
   conv_lhs => rw [convolution_prefix_tail hθ n]
@@ -49,7 +49,7 @@ theorem charFun_scaled_convolution_prefix_tail {θ : ℝ} (hθ : |θ| < 1)
 theorem norm_cosine_prefix_le_one (a θ u : ℝ) (n : ℕ) :
     ‖∏ j : Fin n, (Real.cos ((a * θ ^ (j : ℕ)) * u) : ℂ)‖ ≤ 1 := by
   rw [norm_prod]
-  apply Finset.prod_le_one
+  apply Finset.prod_le_one₀
   · intro j hj
     exact norm_nonneg _
   · intro j hj

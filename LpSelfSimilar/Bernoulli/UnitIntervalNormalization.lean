@@ -76,7 +76,8 @@ theorem unitIntervalNormalization_convolution_stationary {θ : ℝ}
   rw [Fintype.sum_bool]
   change (convolution θ).map q = _
   conv_lhs => rw [convolution_stationary (by rwa [abs_of_pos hθ0])]
-  rw [Measure.map_add _ _ q.measurable, Measure.map_smul, Measure.map_smul]
+  rw [Measure.map_add _ _ q.measurable, Measure.map_smul _ q.measurable.aemeasurable,
+    Measure.map_smul _ q.measurable.aemeasurable]
   rw [Measure.map_map q.measurable (show Measurable (fun x : ℝ => θ * x + 1) by fun_prop),
     Measure.map_map q.measurable (show Measurable (fun x : ℝ => θ * x - 1) by fun_prop),
     Measure.map_map (digitMap hθ0 true).measurable q.measurable,

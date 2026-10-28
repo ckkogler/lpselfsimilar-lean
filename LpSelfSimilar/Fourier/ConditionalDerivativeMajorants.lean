@@ -64,7 +64,7 @@ theorem integral_norm_iteratedDeriv_charFun_product_le_exp
   have hp : (∏ i, (1 - b i)) ≤ Real.exp (-∑ i, b i) := by
     calc
       _ ≤ ∏ i, Real.exp (-b i) := by
-        apply Finset.prod_le_prod
+        apply Finset.prod_le_prod₀
         · intro i hi
           exact sub_nonneg.mpr (hb1 i).le
         · intro i hi

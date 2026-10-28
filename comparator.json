@@ -1,0 +1,18 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "LpSelfSimilar.self_similar_higher_integrability",
+    "LpSelfSimilar.algebraic_bernoulli_convolution_continuous_density_non_strict",
+    "LpSelfSimilar.algebraic_bernoulli_convolution_cubic",
+    "LpSelfSimilar.rational_bernoulli_convolution_continuous_density_cubic",
+    "LpSelfSimilar.bernoulli_convolution_one_sub_inv_continuous_density_cubic_int"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

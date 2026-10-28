@@ -1,6 +1,7 @@
 module
 
 public import LpSelfSimilar.Gaussian.MultivariateConvolution
+public import Mathlib.Probability.Distributions.Gaussian.Fernique
 
 @[expose] public section
 

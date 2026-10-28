@@ -1,6 +1,9 @@
 module
 
-public import LpSelfSimilar.Algebraic.PowerSelection
+public import LpSelfSimilar.Algebraic.ComplexityPowers
+public import LpSelfSimilar.Algebraic.GapEstimate
+public import LpSelfSimilar.Analysis.LargeComplexity
+public import LpSelfSimilar.Bernoulli.PowerBounds
 public import LpSelfSimilar.Analysis.ExponentialTailNumerics
 
 /-!
@@ -131,7 +134,7 @@ theorem smoothingPower_spec {l : ℝ} (halg : IsAlgebraic ℚ l)
   have hkreal : (1 : ℝ) < k := by exact_mod_cast hk2
   have he : (k : ℝ) / ((k : ℝ) - 1) = 1 + 1 / ((k : ℝ) - 1) := by
     field_simp [sub_ne_zero.mpr hkreal.ne']
-    <;> ring
+    ring
   refine ⟨hk2, hkgain, hkhi, hθhalf, hθ1, hθsmall, ?_⟩
   rw [he]
   linarith
@@ -181,7 +184,7 @@ theorem smoothingPower_cost_bound {l : ℝ} (halg : IsAlgebraic ℚ l)
       calc
         _ = (2 * (20 : ℝ) ^ 11 * (1 + t) ^ 11) * (exp (-t) * exp (t / 10)) := by ring
         _ = _ := by rw [he]
-    _ = _ := by dsimp [t]; congr 2 <;> ring
+    _ = _ := by dsimp [t]; congr 2; ring
 
 /-- The exponential-polynomial expression in the revised proof decreases
 throughout the stated range `t ≥ 400`. -/

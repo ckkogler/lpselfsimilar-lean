@@ -1,0 +1,126 @@
+version: v0.4
+project:
+  name: Lp densities of self-similar measures and Bernoulli convolutions
+  description: >-
+    An absolutely continuous self-similar measure on Euclidean space has an
+    Lp density for some p greater than one. For an algebraic parameter lambda
+    between one half and one, put B=(1+d+log M)/min(1,log M), where d is its
+    degree and M its Mahler measure. The non-strict condition lambda>=1-B^(-3)
+    gives an L2 density at lambda squared and a continuous compactly supported
+    density at lambda. The exponent-100 criterion is also retained, including
+    its endpoint. For reduced lambda=1-p/q, the condition p<=q/(2+log q)^3
+    suffices; in particular every integer n>=588 gives continuity at 1-1/n.
+    The library contains the quantitative reverse Holder, entropy, arithmetic,
+    Gaussian, Fourier and concentration arguments underlying both proofs.
+  authors: [Constantin Kogler]
+  responsible_maintainers: [Constantin Kogler]
+  license: 0BSD
+classification:
+  arxiv: [math.DS, math.PR]
+  msc2020: [28A80, 42A38, 60G50]
+sources:
+  - title: On Lp density of self similar measures and Bernoulli convolutions
+    authors: [Samuel Kittle, Constantin Kogler]
+    type: paper
+    relationship: formalizes
+    location: Theorems 1.1–1.3, Corollary 1.4, Lemma 2.1, and the numbered results of Section 3
+    note: >-
+      Primary mathematical source. The revised reverse Holder constant is 18^d
+      with its exact logarithmic exponent. The exponent-100 condition includes
+      equality. The introduction's cubic claims agree with the second source.
+      No unverified public publication identifier is asserted.
+  - title: A cubic criterion for continuous algebraic Bernoulli convolutions
+    authors: [Samuel Kittle, Constantin Kogler]
+    type: paper
+    relationship: formalizes
+    location: Theorem 1.1, Corollary 1.2, Proposition 1.3, Sections 2–6 and Appendices A–B
+    note: >-
+      Primary source for the cubic proof, including the L2 conclusion at the
+      squared parameter, continuous compactly supported density at the original
+      parameter, rational consequence and every integer denominator at least 588.
+      The threshold concerns the sufficient rational inequality, not necessity
+      of continuity. Duplicate introduction statements are compared once.
+  - title: Entropy of Bernoulli convolutions and uniform exponential growth for linear groups
+    authors: [Emmanuel Breuillard, Péter P. Varjú]
+    id: https://arxiv.org/abs/1510.04043v4
+    type: paper
+    relationship: adapts
+    note: >-
+      The required finite Gaussian comparison and quantitative entropy estimates
+      are proved from canonical conjugate matrices and actual probability laws.
+      No entropy theorem is assumed as an axiom.
+  - title: Mutual information and minimum mean-square error in Gaussian channels
+    authors: [Dongning Guo, Shlomo Shamai (Shitz), Sergio Verdú]
+    type: paper
+    relationship: adapts
+    location: IEEE Transactions on Information Theory 51 (2005), 1261–1282, Theorem 1
+    note: >-
+      The scalar binary Gaussian identity needed here is proved directly for
+      conditional expectation and variance. The full general channel theorem
+      is not an additional formalization claim.
+related_formalizations:
+  - id: lp-densities-lean, commit 1ede5c88a2f7fcbb43907447f2363db89fbde0a2
+    relationship: builds-on
+    note: Earlier 0BSD LpSelfSimilar proof development; adapted sources are contained here.
+  - id: bernoulli-exponent-three-lean, commit bfdcb9fc506387335c964c6dde6693d09237476e
+    relationship: builds-on
+    note: Cumulative 0BSD cubic extension; copied sources are contained, not external dependencies.
+status:
+  scope: >-
+    The package combines both primary developments and the revised supporting
+    statements. The five public introduction claims are independently stated in
+    Challenge. Final compilation, semantic review, strict comparison and local
+    policy checks of this revised snapshot are in progress; predecessor checks
+    are not presented as evidence for changed sources.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: [propext, Classical.choice, Quot.sound]
+automation:
+  methods:
+    - method: agent
+      models: [GPT-6 (Codex)]
+      framework: Codex
+      tool_setup: >-
+        One coordinator and three concurrent agents develop and review the
+        contained Lean implementation using compiler feedback, Mathlib tactics,
+        source correspondence, axiom audits and independent kernel checking.
+      prompting_notes: >-
+        Preserve exact statements and constants, reuse existing proofs, adapt
+        the revised results, attribute mathematics to Kittle–Kogler, and prepare
+        a self-contained locally verified submission package.
+  notes: >-
+    Samuel Kittle and Constantin Kogler are credited for the primary mathematics.
+    Constantin Kogler directs and maintains the formalization. Codex generated
+    and revised Lean code and checking tools. No independent human review of
+    the formalization is asserted; inference costs were not measured.
+fidelity:
+  divergences: >-
+    Density statements use actual measure identities, fair-sign series laws and
+    canonical algebraic invariants. Finite stopping words replace informal
+    stopping-time descriptions. Revised supporting interfaces retain their
+    constants and endpoints; proof variants and editorial corrections are
+    documented in FORMALIZATION.md and provenance/SOURCE_NOTES.md. Historical
+    exponent-50 and older reverse Holder statements remain in the proof library
+    but are not extra public Challenge claims.
+review:
+  status: unchecked
+  reviewers: []
+  notes: >-
+    Final cross-agent review and compilation of the revised snapshot are pending.
+    Exact completed checks will be recorded in verification/. Local checking is
+    distinct from hosted CI, registry review and independent human peer review.
+alignment:
+  namespace: LpSelfSimilar
+  coverage_index: COVERAGE.md
+  statements:
+    - source: Theorem 1.1, higher integrability
+      lean: LpSelfSimilar.self_similar_higher_integrability
+    - source: Theorem 1.2, non-strict exponent-100 criterion
+      lean: LpSelfSimilar.algebraic_bernoulli_convolution_continuous_density_non_strict
+    - source: Theorem 1.3 and cubic Theorem 1.1, both conclusions
+      lean: LpSelfSimilar.algebraic_bernoulli_convolution_cubic
+    - source: Corollary 1.4 and cubic Corollary 1.2
+      lean: LpSelfSimilar.rational_bernoulli_convolution_continuous_density_cubic
+    - source: Cubic Corollary 1.2, integer family
+      lean: LpSelfSimilar.bernoulli_convolution_one_sub_inv_continuous_density_cubic_int
+acknowledgements: Lean, Mathlib, Comparator, NanoDa, con-ron and their contributors. Dependencies retain their own licenses.
