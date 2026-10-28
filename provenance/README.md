@@ -5,6 +5,9 @@ mathematical works and their results. References are listed in
 [BIBLIOGRAPHY.md](BIBLIOGRAPHY.md). Constantin Kogler is the responsible
 formalization maintainer and copyright holder of the authored repository material.
 
+The first paper is available as
+[*On Lp density of self similar measures and Bernoulli convolutions* (PDF)](http://constantinkogler.com/Files/L1LpSelfSimilar.pdf).
+
 The Lean implementation was generated with OpenAI Codex assistance, including
 adaptation, compilation and automated semantic review. This records how the
 code was produced; mathematical authorship remains with the named human authors.

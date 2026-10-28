@@ -5,6 +5,10 @@ The complete default build and all-authored axiom audit passed on 28 October
 kernel replay with Lean, NanoDa and con-ron. A fresh isolated checkout rebuilt
 the library and reproduced the same audit with sibling proof projects hidden.
 
+The [self-similar measures paper (PDF)](http://constantinkogler.com/Files/L1LpSelfSimilar.pdf)
+and the [coverage map](../COVERAGE.md) provide the source statements and their
+corresponding Lean declarations.
+
 | Record | Scope |
 | --- | --- |
 | [Library checks](library-checks.json) | Default Lake build: 4,745 jobs; 774 authored module artifacts; all 3,603 authored declarations audited. |
