@@ -1,0 +1,31 @@
+{
+  "status": "agent-reviewed",
+  "date": "2026-10-28",
+  "independent_human_review": false,
+  "proof_source_snapshot_sha256": "2bd50706ee3cb1e78aef2b8f8070252c79e1b71f44f24ef0fc61004bb6e82530",
+  "comparison_source_snapshot_sha256": "0f51c36eb2cee411205b4f7a22cbcb495c3562401fd719909a54a7bafeb43d9d",
+  "scope": [
+    "All five independent introduction claims were reviewed against the supplied Kittle–Kogler sources: actual probability laws and algebraic invariants, hypotheses, non-strict endpoints, exponents 100 and 3, both cubic conclusions, rational parameters and the integer-588 consequence.",
+    "The revised reverse Holder exponent, strict-superlevel recurrence and summation ratio were checked without an additional measurability premise.",
+    "The Section 3 interfaces retain arbitrary positive scales including the infinite Lp exponent, the supplied-density L1/Linfty approximation, order one in the detail comparison, and the exact floor and exponential-cost estimates.",
+    "Preserved theorem/lemma source headers were compared exactly after whitespace/comment normalization; nontransport implementation changes were separately reviewed. This source comparison is not asserted to be elaborated-type equivalence across Lean releases.",
+    "Explicit checked equivalence lemmas identify MemLp with the historical measurable-and-finite condition, and identify the historical and current map constructions under AEMeasurable. No equivalence for nonmeasurable maps is asserted. Kernel and axiom checks supplement semantic review.",
+    "The cubic source was reread and its nine numbered results, both appendices and essential displayed estimates checked against the preserved supporting library and current axiom audit. Historical semantic indexing and source continuity supplement the numbered-core interface review; this is not a new line-by-line proof audit of every indexed declaration."
+  ],
+  "preserved_source_commit": "bfdcb9fc506387335c964c6dde6693d09237476e",
+  "preserved_files_compared": 755,
+  "preserved_theorem_lemma_headers_compared": 2592,
+  "changed_preserved_headers": 0,
+  "nontransport_code_change_files_reviewed": 44,
+  "migration_review_receipt_sha256": "e845d1b44f34fe8b440a129e6994d48e3867b9c983a7e8fa1a342d62774c7c86",
+  "cubic_coverage_review": {
+    "status": "pass",
+    "groups": 57,
+    "modules": 161,
+    "anchor_occurrences": 615,
+    "unique_anchors": 585,
+    "raw_review_sha256": "f7f15927db9539fc312b4fea1c2d53c248fe61bf0e77e4fec557e184f9da8283",
+    "unresolved_mathematical_coverage_obligations_detected": false
+  },
+  "notes": "The exact source review records and manuscript evidence remain private. Source notes document mathematical proof variants. No independent human peer review is asserted."
+}

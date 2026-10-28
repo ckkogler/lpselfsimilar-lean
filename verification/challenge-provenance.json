@@ -1,0 +1,27 @@
+{
+  "status": "pass",
+  "comparison_source_snapshot_sha256": "0f51c36eb2cee411205b4f7a22cbcb495c3562401fd719909a54a7bafeb43d9d",
+  "challenge_sha256": "2f1e330475c24f80062106b1e64c4e1834a22622522fa707f02f09eccf81558d",
+  "independent_compilation": true,
+  "candidate_lake_configuration_used_for_challenge": false,
+  "trusted_inputs": "Pinned Lean standard library and the exact clean Mathlib manifest closure only.",
+  "direct_source_import_sha256": {
+    "$LEAN_TOOLCHAIN/src/lean/Init.lean": "28b57970b6f0adef586f14939a95362959b698a68463d4a803f81464ad8e0675",
+    "$PROJECT/.lake/packages/mathlib/Mathlib/MeasureTheory/Measure/Haar/InnerProductSpace.lean": "c17df8648e2e81f5ee2b9d9e5ee7f298fe0a0eeb2beeb14998dd470f67a54b63",
+    "$PROJECT/.lake/packages/mathlib/Mathlib/MeasureTheory/Measure/Real.lean": "7d06d0c77149faa765d606313411b90123606131e436acdaa4eeed1cdc9ebb59",
+    "$PROJECT/.lake/packages/mathlib/Mathlib/MeasureTheory/Measure/WithDensity.lean": "2b877d2d0e6b6c65ccb5c14719c1464d20ce80df1d09d03fd8f8ad66f040ade5",
+    "$PROJECT/.lake/packages/mathlib/Mathlib/MeasureTheory/Function/LpSeminorm/Basic.lean": "9bb036aeeeb005874d4ebcac5af8a96e01b2b74ddc653ce582984204b20df735",
+    "$PROJECT/.lake/packages/mathlib/Mathlib/Probability/Distributions/Bernoulli.lean": "aa2ba1209900f522001849ee6aa715b86ad5e625b2d6f8f4cd8caf573e1c48eb",
+    "$PROJECT/.lake/packages/mathlib/Mathlib/Probability/Independence/InfinitePi.lean": "d53662a8ca667e78ec2f45166544f326b53a8dfb69d0ce21fed83b6e097b4f97",
+    "$PROJECT/.lake/packages/mathlib/Mathlib/RingTheory/Polynomial/GaussLemma.lean": "df5e74401f4d1d03635fd82228b6efab30366d870e68d98ba31f41ef2d59cc38",
+    "$PROJECT/.lake/packages/mathlib/Mathlib/Algebra/GCDMonoid/Nat.lean": "2a2da49d742719f29a01c813d08ce54036a250f6e7e2f4717a7908b36b9e8d47",
+    "$PROJECT/.lake/packages/mathlib/Mathlib/FieldTheory/Minpoly/Field.lean": "fe04a7397a658c891438ea88608edb8895d6e5a3d990b91f4996ea06bd4cd70d",
+    "$PROJECT/.lake/packages/mathlib/Mathlib/NumberTheory/MahlerMeasure.lean": "139fec8ac5b9f3faf8b48f6c7bedc2c2e26da14e4c504cfc86272660e8ca07b2",
+    "$PROJECT/.lake/packages/mathlib/Mathlib/Tactic.lean": "10b86999915c952c9eceac130749d0888a02230e6c4ae5eb06ba7e0200e20332"
+  },
+  "definition_holes": 0,
+  "intentional_theorem_holes": 5,
+  "declaration_closure_policy_sha256": "ee8f15e73810c0ef36672deebcb7d958538940a931d7fc96c256f7f29cf8a10d",
+  "comparator_definition_closure_review_sha256": "80aa44eaa18f4e4a6630279e0f665d188bf6af657905fb8f429f65ccc25590c7",
+  "raw_comparison_receipt_sha256": "e3674ad3bb076ceef5eba682b11c5a2890d5157f2ead0a89be09a306d8b4baa5"
+}

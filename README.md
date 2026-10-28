@@ -30,9 +30,11 @@ to the library and its comprehensive audit.
 - [formalization.yaml](formalization.yaml) and [comparator.json](comparator.json):
   submission metadata and the statement comparison configuration.
 
-The revised package is undergoing its final verification.
-The verification directory distinguishes completed checks from pending work;
-previous checks of predecessor projects are not evidence for changed sources.
+The complete library builds, and its 3,603 authored declarations pass the axiom
+audit. All five introduction claims pass strict comparison and replay with Lean,
+NanoDa and con-ron. A fresh isolated checkout rebuilds the library and reproduces
+the same audit. The [verification records](verification/README.md) identify the
+checked sources, tools and scope.
 
 ## Build and audit
 

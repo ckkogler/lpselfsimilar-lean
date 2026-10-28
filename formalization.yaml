@@ -69,9 +69,11 @@ status:
   scope: >-
     The package combines both primary developments and the revised supporting
     statements. The five public introduction claims are independently stated in
-    Challenge. Final compilation, semantic review, strict comparison and local
-    policy checks of this revised snapshot are in progress; predecessor checks
-    are not presented as evidence for changed sources.
+    Challenge. The complete default build and all-authored axiom audit pass for
+    3,603 declarations. All five claims pass strict comparison and replay with
+    Lean, NanoDa and con-ron. A fresh isolated checkout rebuilds the proof library
+    and reproduces the same audit. The exact checked snapshots and the distinct
+    semantic and local policy reviews are recorded in verification/.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: [propext, Classical.choice, Quot.sound]
@@ -103,12 +105,18 @@ fidelity:
     exponent-50 and older reverse Holder statements remain in the proof library
     but are not extra public Challenge claims.
 review:
-  status: unchecked
+  status: agent-reviewed
   reviewers: []
   notes: >-
-    Final cross-agent review and compilation of the revised snapshot are pending.
-    Exact completed checks will be recorded in verification/. Local checking is
-    distinct from hosted CI, registry review and independent human peer review.
+    Distinct agents reviewed the introduction statements, revised supporting
+    results, mathematical source coverage and migration. All 2,592 preserved
+    theorem and lemma headers are unchanged after comment and whitespace
+    normalization; substantive implementation changes were separately reviewed.
+    The complete library and isolated reproduction pass the same axiom audit.
+    The independent Challenge passes strict comparison, including the ordinary
+    definition bodies in its theorem type dependency closure. Exact evidence
+    and review limits appear in verification/. No hosted CI run, registry
+    acceptance or independent human peer review is claimed.
 alignment:
   namespace: LpSelfSimilar
   coverage_index: COVERAGE.md

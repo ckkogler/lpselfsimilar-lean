@@ -1,0 +1,61 @@
+{
+  "status": "pass",
+  "checked_commit": "c038cfe6570a84bda77b5481fff6b1fd8226129e",
+  "proof_source_snapshot_sha256": "2bd50706ee3cb1e78aef2b8f8070252c79e1b71f44f24ef0fc61004bb6e82530",
+  "lean_version": "Lean (version 4.35.0-rc2, x86_64-unknown-linux-gnu, commit 11acb17ec6b07a8f9e9173e6845197929540936b, Release)",
+  "execution": {
+    "job_id": "17517507",
+    "host": "typhon-node17.sns.ias.edu",
+    "cpu_affinity": [
+      17,
+      25,
+      36,
+      68
+    ],
+    "lean_num_threads": 4
+  },
+  "phases": {
+    "default-build": {
+      "command": [
+        "$LEAN_TOOLCHAIN/bin/lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-28T13:39:27.265765+00:00",
+      "finished_utc": "2026-10-28T13:58:57.628027+00:00",
+      "log_sha256": "9c7ccd0d8ad4796839119e62cdf7d6396947a346626792befcee976a2c57d49e"
+    },
+    "axioms": {
+      "command": [
+        "$LEAN_TOOLCHAIN/bin/lake",
+        "env",
+        "lean",
+        "-j4",
+        "Verification.lean"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-28T13:58:59.045660+00:00",
+      "finished_utc": "2026-10-28T14:00:58.923486+00:00",
+      "log_sha256": "9a4adf76ab042de39d54727474e40d9a3e7ebad6abab8df29c77eecbd1162698"
+    }
+  },
+  "lake_jobs": 4745,
+  "authored_module_artifact_count": 774,
+  "authored_declaration_count": 3603,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "only_permitted_axioms": true,
+  "all_authored_modules_reachable_from_solution": true,
+  "generated_declarations_included": true,
+  "challenge_in_proved_closure": false,
+  "artifact_bundle_kinds": [
+    ".olean",
+    ".olean.private",
+    ".olean.server"
+  ],
+  "raw_receipt_sha256": "c05f0d708dd3e88aa7dfed9ca75eacd5b57f270cf9807a5b68ed977d47d74777",
+  "runner_sha256": "e72632e6d37067a22f821b8ee17f49a9e23a5704947753196b42d5d05fbf6e8f"
+}

@@ -6,8 +6,8 @@ for continuous algebraic Bernoulli convolutions*. Bibliographic attribution
 is in [provenance/BIBLIOGRAPHY.md](provenance/BIBLIOGRAPHY.md).
 
 The source map below distinguishes the compact introduction claims from the
-full supporting library. Source correspondence and migration are being checked;
-completed verification is recorded separately in [verification](verification/README.md).
+full supporting library. Source correspondence and migration have been reviewed;
+completed checks and their scope are recorded in [verification](verification/README.md).
 Names have prefix `LpSelfSimilar` unless fully qualified.
 
 ## Introduction claims

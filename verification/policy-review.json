@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-28",
+  "guidance": "https://palomar-registry.org/how-to-submit",
+  "official_repository": "https://github.com/PalomarRegistry/PalomarSubmission",
+  "official_commit": "a93fc88c092faeef1a92b1c905e688aab8e80795",
+  "policy_file_sha256": {
+    "toolchains.json": "fd40347e4b586e7c42233b35f11efb006d25033b9a7ded9565719edf7aa98354",
+    "verification-profile.json": "94fcd7906a1b6c076c0036d742e1c5add8625e49bb474818ec8924576dbf0caa",
+    "execution-profiles.json": "7bef8cba4402f3d1e7324d501fdcbda44ece376fcdc98ea4c4ca945cca731bf4",
+    "checker-revisions.json": "f8bf5d9df7e38fb16d667003b1b47dd28aaf4dc380ce01b50df3f8c36a79c6f3",
+    "requirements.txt": "5144c14fbd798e2eb36ce329776b1c7f15f309f007f93003c30d29ddd9261536",
+    "Gemfile.lock": "d93caad3b41ab81138c1770dcde1415ac9aa47e8e469ea25b3f876a9f3d2cdff",
+    "scripts/source_requirements.py": "971950a45500ad8ba8c9061eb51716bc1c38f411ff877c447b6de527b23d2c6d",
+    "scripts/submission_contract.py": "264b7da57bd099b7cd4da15b580b32978671a60b8b396c60920f584176224cc3",
+    "scripts/verify_submission.py": "3ff03bf4d7774ec47e1e81fe397d03e54895ee59901036580c6da3b57010cc08",
+    "scripts/checker_updates.py": "a912a25f2770a5dbc5edb5e6f2b0948db03d68325179c1e8e3b9f08152001384",
+    "scripts/kernel_outcomes.py": "63329382f969ca8280661076ab4ce7dc1d9a1b54083d2c8a9d57a25a16486e79",
+    "docs/comparator-declaration-closure.md": "ee8f15e73810c0ef36672deebcb7d958538940a931d7fc96c256f7f29cf8a10d"
+  },
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "mathlib_revision": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "selected_con_ron": {
+    "kind": "maintainer-pinned-release",
+    "source_toolchain": "leanprover/lean4:v4.35.0-rc2",
+    "release_tag": "v4.36.0-rc1",
+    "release_commit": "c9afcddf514a6772bd4d649f7cfc04eff0b9f15e",
+    "archive_sha256": "26b3cea1a006ad419215520b8668dcd3f6a9eeba1a123756563a739f9c6274b2",
+    "binary_sha256": "4e5616d94374cae37324dad2594f6230c2bb2297240249fc78ff508f3bc5acef"
+  },
+  "mandatory_kernels": [
+    "Lean default",
+    "NanoDa"
+  ],
+  "supplemental_con_ron": "The current policy-selected checker was actually run and accepted the same Solution export.",
+  "source_limits": {
+    "module_header_every_regular_lean_file": true,
+    "maximum_physical_lines": 10000,
+    "challenge_maximum_lines": 1000,
+    "challenge_maximum_bytes": 102400
+  },
+  "scope": "Current local policy and tool review. The hosted registry sandbox, remote CI and registry acceptance are separate."
+}
