@@ -1,0 +1,28 @@
+name = "LpSelfSimilar"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["LpSelfSimilar", "BernoulliCubic", "Solution"]
+
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+weak.linter.style.header = false # Mathlib's copyright-header policy is specific to Mathlib.
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.35.0-rc2"
+
+[[lean_lib]]
+name = "LpSelfSimilar"
+
+[[lean_lib]]
+name = "BernoulliCubic"
+
+[[lean_lib]]
+name = "Solution"
+
+[[lean_lib]]
+name = "Challenge"
