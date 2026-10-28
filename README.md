@@ -3,7 +3,7 @@
 This repository formalizes the results of Samuel Kittle and Constantin Kogler
 on higher integrability of self-similar measures and explicit continuous
 densities for Bernoulli convolutions. It combines
-[*On Lp density of self similar measures and Bernoulli convolutions* (PDF)](http://constantinkogler.com/Files/L1LpSelfSimilar.pdf)
+[*On Lp density of self similar measures and Bernoulli convolutions* (PDF)](L1LpSelfSimilar.pdf)
 with *A cubic criterion for continuous
 algebraic Bernoulli convolutions*.
 
